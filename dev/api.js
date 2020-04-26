@@ -1,8 +1,29 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
 
-app.get("/", (req, res) => {
-   res.send("hello") ;
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+
+
+
+app.get("/blockchain", (req, res) => {
+
 });
 
-app.listen(3000);
+app.post("/transaction", (req, res) => {
+    
+});
+
+app.get("/mine", (req, res) => {
+
+});
+
+
+
+app.listen(3000, ()=>{
+    console.log("listening on port 3000");
+});
